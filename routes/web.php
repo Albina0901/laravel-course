@@ -18,7 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return view('about');
+    $aTeam = [
+        ['name' => 'Hodor', 'position' => 'programmer'],
+        ['name' => 'Joker', 'position' => 'CEO'],
+        ['name' => 'Elvis', 'position' => 'CTO'],
+    ];
+    return view('about', ['aTeam' => $aTeam]);
 })->name('about.index');
 
 Route::get('articles', function () {
