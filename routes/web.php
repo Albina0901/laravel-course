@@ -27,5 +27,7 @@ Route::get('about', function () {
 })->name('about.index');
 
 Route::get('articles', function () {
-    return view('articles');
+    $articleModel = new App\Models\Article();
+    $oArticle = $articleModel::all();
+    return view('articles', ['oArticle' => $oArticle]);
 })->name('articles.index');
