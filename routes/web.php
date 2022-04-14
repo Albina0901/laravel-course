@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\RatingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,14 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function () {
-    $aTeam = [
-        ['name' => 'Hodor', 'position' => 'programmer'],
-        ['name' => 'Joker', 'position' => 'CEO'],
-        ['name' => 'Elvis', 'position' => 'CTO'],
-    ];
-    return view('about', ['aTeam' => $aTeam]);
-})->name('about.index');
+Route::get('about', [PageController::class, 'about'])->name('about.index');
+Route::get('rating', [RatingController::class, 'index'])->name('rating.index');
 
 Route::get('articles', function () {
     $articleModel = new App\Models\Article();

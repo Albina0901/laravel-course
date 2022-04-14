@@ -5,3 +5,19 @@
 .about__container-item {
     margin-top: 10px;
 }
+
+.rating__container-item {
+    max-width: 500px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #7f7f7f;
+}
+.rating__container-item__flex {
+    display: flex;
+    justify-content: space-between;
+}
+.rating__container-item__view {
+    color: #2557c1;
+}
+.rating__container-item__like {
+    color: #087808;
+}
