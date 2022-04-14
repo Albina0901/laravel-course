@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArticleCategoryController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RatingController;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +24,5 @@ Route::get('/', function () {
 Route::get('about', [PageController::class, 'about'])->name('about.index');
 Route::get('rating', [RatingController::class, 'index'])->name('rating.index');
 
-Route::get('articles', function () {
-    $articleModel = new App\Models\Article();
-    $oArticle = $articleModel::all();
-    return view('articles', ['oArticle' => $oArticle]);
-})->name('articles.index');
+Route::get('articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('article_category', [ArticleCategoryController::class, 'index'])->name('article_category.index');
