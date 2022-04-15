@@ -8,8 +8,15 @@ class ArticleCategoryController extends Controller
 {
     public function index()
     {
-        $articleCategoryCollection = ArticleCategory::where('state', 'published')->paginate(1);
+        $categoryCollection = ArticleCategory::where('state', 'published')->paginate(1);
 
-        return view('article_category.index', compact('articleCategoryCollection'));
+        return view('article_category.index', compact('categoryCollection'));
+    }
+
+    public function show($id)
+    {
+        $category = ArticleCategory::findOrFail($id);
+
+        return view('article_category.show', compact('category'));
     }
 }

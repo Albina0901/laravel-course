@@ -3,13 +3,14 @@ body {
     padding: 0;
     font-family: 'Jura', sans-serif;
 }
-ul, li {
+ul, li, ol {
     margin: 0;
     padding: 0;
     display: block;
     list-style: none;
 }
 a {
+    display: inline-block;
     color: #000;
     text-decoration: none;
 }
@@ -56,3 +57,20 @@ a {
 }
 
 /* article */
+.article__container-item__title {
+    font-size: 18px;
+    margin: 15px 0;
+}
+.article__container-item__flex {
+    display: flex;
+    justify-content: space-between;
+}
+.article__container-item__view {
+    color: #2557c1;
+}
+.article__container-item__like {
+    color: #087808;
+}
+.article__container-article {
+    margin-bottom: 10px;
+}

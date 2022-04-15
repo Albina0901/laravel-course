@@ -9,7 +9,7 @@
         <div class="article__container">
             @foreach($articleCollection as $aArticleItem)
                 <div class="article__container-item">
-                    <h4 class="article__container-item__title">{{ $aArticleItem->name }}</h4>
+                    <a href="{{ route('articles.show', ['id' => $aArticleItem->id]) }}" class="article__container-item__title">{{ $aArticleItem->name }}</a>
                     <div class="article__container-item__text">{{ Str::limit($aArticleItem->body, 200) }}</div>
                 </div>
             @endforeach

@@ -5,18 +5,17 @@
 @section('header', 'Категории статей')
 
 @section('content')
-    @if($articleCategoryCollection->count() > 0)
+    @if($categoryCollection->count() > 0)
         <div class="article__container">
-            @foreach($articleCategoryCollection as $aArticleItem)
+            @foreach($categoryCollection as $aCategoryItem)
                 <div class="article__container-item">
-                    <h4 class="article__container-item__title">{{ $aArticleItem->name }}</h4>
-                    <div class="article__container-item__text">{{ Str::limit($aArticleItem->description, 200) }}</div>
+                    <a href="{{ route('article_category.show', ['id' => $aCategoryItem->id]) }}" class="article__container-item__title">{{ $aCategoryItem->name }}</a>
+                    <div class="article__container-item__text">{{ Str::limit($aCategoryItem->description, 200) }}</div>
                 </div>
             @endforeach
             <div class="article__container-pagination">
-                {{ $articleCategoryCollection->links() }}
+                {{ $categoryCollection->links() }}
             </div>
         </div>
     @endif
 @endsection
-
