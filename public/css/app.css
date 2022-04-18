@@ -24,6 +24,11 @@ a {
     padding: 25px 0;
     border-bottom: 1px solid #7f7f7f;
 }
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .header__nav {
     display: flex;
 }

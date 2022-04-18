@@ -13,14 +13,22 @@
 <body>
 <header class="header">
     <div class="container">
-        <nav>
-            <ul class="header__nav">
-                <li><a class="header__nav-item" href="{{ route('about.index') }}">About</a></li>
-                <li><a class="header__nav-item" href="{{ route('rating.index') }}">Rating</a></li>
-                <li><a class="header__nav-item" href="{{ route('articles.index') }}">Articles</a></li>
-                <li><a class="header__nav-item" href="{{ route('article_category.index') }}">Article category</a></li>
-            </ul>
-        </nav>
+        <div class="header__inner">
+            <nav>
+                <ul class="header__nav">
+                    <li><a class="header__nav-item" href="{{ route('about.index') }}">About</a></li>
+                    <li><a class="header__nav-item" href="{{ route('rating.index') }}">Rating</a></li>
+                    <li><a class="header__nav-item" href="{{ route('articles.index') }}">Articles</a></li>
+                    <li><a class="header__nav-item" href="{{ route('article_category.index') }}">Article category</a></li>
+                </ul>
+            </nav>
+            <div class="header__search">
+                {{ Form::open(['url' => route('articles.index'), 'method' => 'GET']) }}
+                    {{ Form::text('q', null, ['placeholder' => 'поиск по статьям'])}}
+                    {{ Form::submit('найти') }}
+                {{ Form::close() }}
+            </div>
+        </div>
     </div>
 </header>
 <main class="main">
